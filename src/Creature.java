@@ -8,14 +8,14 @@ public class Creature {
     private String[] traits;   // Nullable, defaults to "undeclared"
     private String universe;
 
-    // Constructor with fields defaulting to "Undeclared" if no input is provided
+
     public Creature(int id, Boolean isHuman, String planet, Integer age, String[] traits) {
-        this.id = id; // id is required
-        this.isHuman = (isHuman != null) ? isHuman : null;   // Defaults to null, representing undeclared
-        this.planet = (planet != null) ? planet : "Undeclared";  // Default to "Undeclared" if planet is null
-        this.age = (age != null) ? age : null;   // Defaults to null, representing undeclared
-        this.traits = (traits != null && traits.length > 0) ? traits : new String[]{"Undeclared"};  // Default to "Undeclared"
-        this.universe = "Unknown"; // Default value for universe
+        this.id = id;
+        this.isHuman = isHuman;
+        this.planet =planet;
+        this.age = age;
+        this.traits =traits;
+        this.universe = "Unknown";
     }
 
     // Getters and setters
