@@ -1,15 +1,13 @@
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import org.json.JSONArray;
-
-
 import org.json.JSONObject;
+
 
 class readFile {
     // Method to read JSON data from file
@@ -30,7 +28,6 @@ class readFile {
 
     public static List<Creature> creaturesList = new ArrayList<>();
 
-    // Method to parse and print JSON data
     static void parseInput(JsonNode data) throws IOException {
         for (JsonNode entry : data) {
             String entryAsString = entry.toString();
