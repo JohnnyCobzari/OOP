@@ -32,6 +32,7 @@ class readFile {
         for (JsonNode entry : data) {
             String entryAsString = entry.toString();
             JSONObject jsonpObject = new JSONObject(entryAsString);
+
             int id = jsonpObject.has("id") ? jsonpObject.getInt("id") : 0;  // Default to 0 if no id
 
             // Handle isHumanoid (nullable Boolean)
@@ -55,6 +56,7 @@ class readFile {
 
             // Create the Creature object
             Creature creature = new Creature(id, isHumanoid, planet, age, traits);
+            creature.checkUniverse();
             System.out.println(creature.describe());
 
 
