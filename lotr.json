@@ -1,0 +1,50 @@
+{"LOTRUniverse": [
+    {
+        "traits": [
+            "SHORT",
+            "BULKY"
+        ],
+        "planet": "Earth",
+        "id": 4
+    },
+    {
+        "isHumanoid": true,
+        "traits": ["BULKY"],
+        "id": 5
+    },
+    {
+        "isHumanoid": true,
+        "traits": [
+            "SHORT",
+            "BULKY"
+        ],
+        "planet": "Earth",
+        "id": 9,
+        "age": 124
+    },
+    {
+        "isHumanoid": true,
+        "id": 14,
+        "age": 7523
+    },
+    {
+        "isHumanoid": true,
+        "traits": [
+            "BLONDE",
+            "TALL"
+        ],
+        "planet": "Earth",
+        "id": 15,
+        "age": 451
+    },
+    {
+        "isHumanoid": true,
+        "traits": [
+            "BLONDE",
+            "POINTY_EARS"
+        ],
+        "planet": "Earth",
+        "id": 19,
+        "age": 451
+    }
+]}
