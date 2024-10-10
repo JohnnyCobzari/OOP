@@ -1,0 +1,52 @@
+{"HitchhikerUniverse": [
+    {
+        "isHumanoid": true,
+        "traits": [
+            "EXTRA_ARMS",
+            "EXTRA_HEAD"
+        ],
+        "planet": "Betelgeuse",
+        "id": 1,
+        "age": 59
+    },
+    {
+        "isHumanoid": false,
+        "traits": ["BULKY"],
+        "id": 2
+    },
+    {
+        "traits": ["EXTRA_ARMS"],
+        "id": 6,
+        "age": 26
+    },
+    {
+        "traits": ["EXTRA_HEAD"],
+        "id": 8,
+        "age": 82
+    },
+    {
+        "isHumanoid": false,
+        "traits": ["GREEN"],
+        "id": 11,
+        "age": 128
+    },
+    {
+        "isHumanoid": false,
+        "traits": [
+            "GREEN",
+            "BULKY"
+        ],
+        "planet": "Vogsphere",
+        "id": 16,
+        "age": 128
+    },
+    {
+        "traits": [
+            "EXTRA_ARMS",
+            "EXTRA_HEAD"
+        ],
+        "planet": "Betelgeuse",
+        "id": 21,
+        "age": 45
+    }
+]}
