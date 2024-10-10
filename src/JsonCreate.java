@@ -6,14 +6,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class JsonCreate {
+
     public static JSONObject StarWars1 = new JSONObject();
     public static JSONObject Hitchhiker1 = new JSONObject();
     public static JSONObject Marvel1 = new JSONObject();
     public static JSONObject LOTR1 = new JSONObject();
+
     public static JSONArray StarWars = new JSONArray();
     public static JSONArray Hitchhiker = new JSONArray();
     public static JSONArray Marvel = new JSONArray();
     public static JSONArray LOTR = new JSONArray();
+
     public static void createJsons(){
         StarWars1.put("StarWarsUniverse",StarWars);
         Hitchhiker1.put("HitchhikerUniverse",Hitchhiker);
@@ -30,8 +33,6 @@ public class JsonCreate {
         else if(creature.getUniverse() == "LOTR")
             LOTR.put(creatureJson);
     }
-
-
     public static void createFiles() {
 
         try (FileWriter marvelOutput = new FileWriter("marvel.json")) {
@@ -62,8 +63,6 @@ public class JsonCreate {
             e.printStackTrace();
         }
     }
-
-
     static void parseInput(JsonNode data) throws IOException {
         createJsons();
         for (JsonNode entry : data) {
@@ -93,7 +92,9 @@ public class JsonCreate {
 
             // Create the Creature object
             Creature creature = new Creature(id, isHumanoid, planet, age, traits);
-            creature.checkUniverse();
+
+            creature.checkUniverse2();
+            System.out.println(creature.describe());
             JSONObject creatureJson = new JSONObject();
             creatureJson.put("id", id);
             creatureJson.put("isHumanoid", isHumanoid);
