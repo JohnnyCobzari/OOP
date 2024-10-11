@@ -24,8 +24,4 @@ public class readFile {// Method to read JSON data from file
         return data;
     }
 
-
-
-
-
 }

@@ -111,4 +111,23 @@ public class Creature {
         return universe;
     }
 
+    public int  getId() {return id;}
+
+    public Boolean getIsHuman() {
+        return isHuman;
+    }
+
+    public String getPlanet() {
+        return planet;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public String[] getTraits() {
+        return traits;
+    }
+
+
 }

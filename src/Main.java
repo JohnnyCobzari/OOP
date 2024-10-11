@@ -10,7 +10,8 @@ class Main {
         try {
 
             JsonNode data = readFile.readInput();
-            JsonCreate.parseInput(data);
+            parser.parseInput(data);
+            views.WriteInOutputFile();
 
         } catch (IOException e) {
             e.printStackTrace();
