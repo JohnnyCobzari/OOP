@@ -10,6 +10,7 @@ public class parser {
 
 
     public static List<Creature> CreatureList = new ArrayList<>();
+    public static Classifier Classifier = new Classifier();
 
     static void parseInput(JsonNode data) throws IOException {
         for (JsonNode entry : data) {
@@ -39,7 +40,7 @@ public class parser {
 
             Creature creature = new Creature(id, isHumanoid, planet, age, traits);
 
-            creature.checkUniverse2();
+            Classifier.checkUniverse2(creature);
             CreatureList.add(creature);
 
 
