@@ -13,4 +13,10 @@ protected int mlOfWater;
     public void setMlOfWater(int mlOfWater) {
         this.mlOfWater = mlOfWater;
     }
+
+    @Override
+    public void printCoffe() {
+        super.printCoffe();
+        System.out.println("Ml of water: "+mlOfWater);
+    }
 }

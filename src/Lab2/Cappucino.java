@@ -13,4 +13,10 @@ public class Cappucino extends Coffe {
     public void setMlOfMilk(int mlOfMilk) {
         this.mlOfMilk = mlOfMilk;
     }
+
+    @Override
+    public void printCoffe() {
+        super.printCoffe();
+        System.out.println("Milk: " + getMlOfMilk());
+    }
 }

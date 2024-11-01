@@ -13,4 +13,10 @@ private int mgOfPumpkinSpice;
     public void setMgOfPumpkinSpice(int mlOfMilk) {
         this.mgOfPumpkinSpice = mlOfMilk;
     }
+
+    @Override
+    public void printCoffe() {
+        super.printCoffe();
+        System.out.println("Pumkin Spice: "+mgOfPumpkinSpice);
+    }
 }
