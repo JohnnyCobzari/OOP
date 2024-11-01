@@ -1,3 +1,5 @@
+package Lab0;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,7 +12,7 @@ public class parser {
 
 
     public static List<Creature> CreatureList = new ArrayList<>();
-    public static Classifier Classifier = new Classifier();
+    public static Lab0.Classifier Classifier = new Classifier();
 
     static void parseInput(JsonNode data) throws IOException {
         for (JsonNode entry : data) {

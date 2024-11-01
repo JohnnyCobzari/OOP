@@ -1,3 +1,5 @@
+package Lab0;
+
 import java.util.Arrays;
 
 public class Creature {

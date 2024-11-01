@@ -1,3 +1,5 @@
+package Lab0;
+
 public class ExistingCreatures {
     private Boolean isHuman;
     private String planet;
