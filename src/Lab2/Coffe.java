@@ -17,8 +17,17 @@ public class Coffe {
         this.intensity = intensity;
     }
     public void printCoffe(){
-      System.out.println("Coffe type:"+this.name);
       System.out.println("Intensity:"+this.intensity);
+    }
+    protected void printCoffeProccess(){
+        System.out.println("The barista started to brew coffe");
+        System.out.println("Setted instensity to:"+this.intensity);
+    }
+
+    public Coffe makeCoffe(){
+        System.out.println("Making Coffe");
+        printCoffeProccess();
+        return this;
     }
 
 }

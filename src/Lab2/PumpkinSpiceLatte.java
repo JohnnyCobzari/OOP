@@ -19,4 +19,16 @@ private int mgOfPumpkinSpice;
         super.printCoffe();
         System.out.println("Pumkin Spice: "+mgOfPumpkinSpice);
     }
+    @Override
+    protected void printCoffeProccess() {
+        super.printCoffeProccess();
+        System.out.println("Adding" +mgOfPumpkinSpice+" mg of pumkin Spice: ");
+    }
+    public PumpkinSpiceLatte makePumpkinSpiceLatte() {
+        System.out.println("making PumpkinSpiceLatte");
+        printCoffeProccess();
+        return this;
+    }
+
+
 }

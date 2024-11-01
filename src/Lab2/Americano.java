@@ -19,4 +19,14 @@ protected int mlOfWater;
         super.printCoffe();
         System.out.println("Ml of water: "+mlOfWater);
     }
+    @Override
+    protected void printCoffeProccess() {
+        super.printCoffeProccess();
+        System.out.println("Adding"+mlOfWater+"Ml of water" );
+    }
+    public Americano makeAmericano(){
+        System.out.println("Making Americano");
+        printCoffeProccess();
+        return this;
+    }
 }

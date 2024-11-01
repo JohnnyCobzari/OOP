@@ -23,4 +23,14 @@ public class SyrupCappuccino extends Cappucino{
         super.printCoffe();
         System.out.println("Syrup: " + syrup);
     }
+    @Override
+    protected void printCoffeProccess() {
+        super.printCoffeProccess();
+        System.out.println("Adding" +syrup+" Syrup ");
+    }
+    public SyrupCappuccino makeSyrupCappuccino(){
+        System.out.println("Making SyrupCappuccino");
+        printCoffeProccess();
+        return this;
+    }
 }

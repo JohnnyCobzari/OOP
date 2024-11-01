@@ -19,4 +19,17 @@ public class Cappucino extends Coffe {
         super.printCoffe();
         System.out.println("Milk: " + getMlOfMilk());
     }
+    @Override
+    protected void printCoffeProccess() {
+        super.printCoffeProccess();
+        System.out.println("Adding"+mlOfMilk+"Ml of milk" );
+    }
+
+
+    public Cappucino makeCappuccino() {
+        System.out.println("Making Cappucino");
+        printCoffeProccess();
+        return this;
+    }
+
 }
