@@ -1,17 +1,12 @@
-package Lab2;
+package Lab2.Coffe;
 
 public class Americano extends Coffe {
-protected int mlOfWater;
-    public Americano(Intensity intensity,int mlOfWater) {
+private int mlOfWater=100;
+public Americano() {}
+    public Americano(Intensity intensity) {
         super(intensity);
-        this.mlOfWater = mlOfWater;
+
         this.name="Americano";
-    }
-    public int getMlOfWater() {
-        return mlOfWater;
-    }
-    public void setMlOfWater(int mlOfWater) {
-        this.mlOfWater = mlOfWater;
     }
 
     @Override

@@ -1,15 +1,16 @@
-package Lab2;
+package Lab2.Coffe;
 
 public class SyrupCappuccino extends Cappucino{
-    private enum SyrupType{
-        Macadamia,Vanilla,Coconut,Caramel,Chocolate,Popcorn
+    public enum SyrupType {
+        MACADAMIA, VANILLA, COCONUT, CARAMEL, CHOCOLATE, POPCORN
     }
     SyrupType syrup ;
-    public SyrupCappuccino(Intensity intensity, int mlOfMilk,SyrupType syrup) {
-        super(intensity, mlOfMilk);
+    public SyrupCappuccino(Intensity intensity, SyrupType syrup) {
+        super(intensity);
         this.syrup = syrup;
         this.name ="SyrupCappuccino";
     }
+    public SyrupCappuccino() {}
 
     public SyrupType getSyrup() {
         return syrup;
@@ -21,12 +22,12 @@ public class SyrupCappuccino extends Cappucino{
     @Override
     public void printCoffe() {
         super.printCoffe();
-        System.out.println("Syrup: " + syrup);
+        System.out.println("Syrup: MACADAMIA/VANILLA/COCONUT/CARAMEL/CHOCOLATE/POPCORN " );
     }
     @Override
     protected void printCoffeProccess() {
         super.printCoffeProccess();
-        System.out.println("Adding" +syrup+" Syrup ");
+        System.out.println("Adding" +this.syrup+" Syrup ");
     }
     public SyrupCappuccino makeSyrupCappuccino(){
         System.out.println("Making SyrupCappuccino");

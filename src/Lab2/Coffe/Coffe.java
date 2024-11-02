@@ -1,23 +1,19 @@
-package Lab2;
+package Lab2.Coffe;
 
 
 public class Coffe {
-    protected enum Intensity {
+    public enum Intensity {
         LIGHT, NORMAL, STRONG
     }
     private Intensity intensity;
     protected String name = "Coffe";
+    public Coffe() {}
     public Coffe(Intensity intensity) {
         this.intensity = intensity;
     }
-    public Intensity getIntensity() {
-        return intensity;
-    }
-    public void setIntensity(Intensity intensity) {
-        this.intensity = intensity;
-    }
+
     public void printCoffe(){
-      System.out.println("Intensity:"+this.intensity);
+      System.out.println("Intensity:Light/Normal/Strong");
     }
     protected void printCoffeProccess(){
         System.out.println("The barista started to brew coffe");

@@ -1,28 +1,23 @@
-package Lab2;
+package Lab2.Coffe;
 
 public class Cappucino extends Coffe {
-    protected int mlOfMilk;
-    public Cappucino(Intensity intensity, int mlOfMilk) {
+    protected int mlOfMilk=75;
+    public Cappucino() {}
+    public Cappucino(Intensity intensity) {
         super(intensity);
-        this.mlOfMilk = mlOfMilk;
         this.name = "Cappucino";
     }
-    public int getMlOfMilk() {
-        return mlOfMilk;
-    }
-    public void setMlOfMilk(int mlOfMilk) {
-        this.mlOfMilk = mlOfMilk;
-    }
+
 
     @Override
     public void printCoffe() {
         super.printCoffe();
-        System.out.println("Milk: " + getMlOfMilk());
+        System.out.println("Milk: " + this.mlOfMilk);
     }
     @Override
     protected void printCoffeProccess() {
         super.printCoffeProccess();
-        System.out.println("Adding"+mlOfMilk+"Ml of milk" );
+        System.out.println("Adding"+this.mlOfMilk+"Ml of milk" );
     }
 
 
