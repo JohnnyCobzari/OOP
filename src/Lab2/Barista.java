@@ -9,51 +9,33 @@ public class Barista {
     public Barista(int i) {
         this.command = i;
     }
-    public void brewCoffee(Scanner scanner) {
 
+
+    public void brewCoffee(Scanner scanner) {
+        Coffe.Intensity intensity = getCoffeeIntensity(scanner);
 
         switch (command) {
             case 1: // Basic Coffee
-                System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
-                String intensityInput = scanner.next().toUpperCase();
-                scanner.nextLine();
-                Coffe.Intensity intensity = Coffe.Intensity.valueOf(intensityInput);
                 Coffe coffee = new Coffe(intensity);
                 coffee.makeCoffe();
                 break;
 
             case 2: // Americano
-                System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
-                intensityInput = scanner.next().toUpperCase();
-                scanner.nextLine();
-                intensity = Coffe.Intensity.valueOf(intensityInput);
                 Americano americano = new Americano(intensity);
                 americano.makeAmericano();
                 break;
 
             case 3: // Cappuccino
-                System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
-                intensityInput = scanner.next().toUpperCase();
-                scanner.nextLine();
-                intensity = Coffe.Intensity.valueOf(intensityInput);
                 Cappucino cappuccino = new Cappucino(intensity);
                 cappuccino.makeCappuccino();
                 break;
 
             case 4: // Pumpkin Spice Latte
-                System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
-                intensityInput = scanner.next().toUpperCase();
-                scanner.nextLine();
-                intensity = Coffe.Intensity.valueOf(intensityInput);
                 PumpkinSpiceLatte pumpkinSpiceLatte = new PumpkinSpiceLatte(intensity);
                 pumpkinSpiceLatte.makePumpkinSpiceLatte();
                 break;
 
             case 5: // Syrup Cappuccino
-                System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
-                intensityInput = scanner.next().toUpperCase();
-                scanner.nextLine();
-                intensity = Coffe.Intensity.valueOf(intensityInput);
                 System.out.println("Choose syrup (Macadamia, Vanilla, Coconut, Caramel, Chocolate, Popcorn):");
                 String syrupInput = scanner.next().toUpperCase();
                 scanner.nextLine();
@@ -66,8 +48,17 @@ public class Barista {
                 System.out.println("Unknown command: " + command);
                 break;
         }
-
-
+    }
+    private Coffe.Intensity getCoffeeIntensity(Scanner scanner) {
+        System.out.println("Choose intensity (LIGHT, NORMAL, STRONG):");
+        while (true) {
+            try {
+                String intensityInput = scanner.nextLine().toUpperCase();
+                return Coffe.Intensity.valueOf(intensityInput);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Invalid intensity. Please enter LIGHT, NORMAL, or STRONG:");
+            }
+        }
     }
 
     public void showMenu() {
