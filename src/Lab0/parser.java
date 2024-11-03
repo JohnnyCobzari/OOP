@@ -1,3 +1,5 @@
+package Lab0;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -10,6 +12,7 @@ public class parser {
 
 
     public static List<Creature> CreatureList = new ArrayList<>();
+    public static Lab0.Classifier Classifier = new Classifier();
 
     static void parseInput(JsonNode data) throws IOException {
         for (JsonNode entry : data) {
@@ -39,7 +42,7 @@ public class parser {
 
             Creature creature = new Creature(id, isHumanoid, planet, age, traits);
 
-            creature.checkUniverse2();
+            Classifier.checkUniverse2(creature);
             CreatureList.add(creature);
 
 

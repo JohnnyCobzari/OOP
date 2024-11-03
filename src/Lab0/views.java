@@ -1,3 +1,5 @@
+package Lab0;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import org.json.JSONObject;
 
@@ -6,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.File;
 
-import com. fasterxml. jackson. core. JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class views {
@@ -46,10 +47,10 @@ public class views {
                     System.out.println("Invalid input");
             }
         }
-        mapper.writeValue(new File("src/starWars.json"), starWars);
-        mapper.writeValue(new File("src/hitchhikers.json"), hitchhikers);
-        mapper.writeValue(new File("src/lotr.json"), rings);
-        mapper.writeValue(new File("src/marvel.json"), marvel);
+        mapper.writeValue(new File("src/Lab0/starWars.json"), starWars);
+        mapper.writeValue(new File("src/Lab0/hitchhikers.json"), hitchhikers);
+        mapper.writeValue(new File("src/Lab0/lotr.json"), rings);
+        mapper.writeValue(new File("src/Lab0/marvel.json"), marvel);
     }
 
     record Universe(
