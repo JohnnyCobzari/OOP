@@ -20,7 +20,7 @@ public class Coffe {
         System.out.println("Setted instensity to:"+this.intensity);
     }
 
-    public Coffe makeCoffe(){
+    public final Coffe makeCoffe(){
         System.out.println("Making Coffe");
         printCoffeProccess();
         return this;

@@ -16,9 +16,9 @@ public PumpkinSpiceLatte() {}
     @Override
     protected void printCoffeProccess() {
         super.printCoffeProccess();
-        System.out.println("Adding" +this.mgOfPumpkinSpice+" mg of pumkin Spice: ");
+        System.out.println("Adding" +this.mgOfPumpkinSpice+" mg of pumkin Spice ");
     }
-    public PumpkinSpiceLatte makePumpkinSpiceLatte() {
+    public final PumpkinSpiceLatte makePumpkinSpiceLatte() {
         System.out.println("making PumpkinSpiceLatte");
         printCoffeProccess();
         return this;

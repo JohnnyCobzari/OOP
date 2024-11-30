@@ -29,7 +29,7 @@ public class SyrupCappuccino extends Cappucino{
         super.printCoffeProccess();
         System.out.println("Adding" +this.syrup+" Syrup ");
     }
-    public SyrupCappuccino makeSyrupCappuccino(){
+    public final SyrupCappuccino makeSyrupCappuccino(){
         System.out.println("Making SyrupCappuccino");
         printCoffeProccess();
         return this;

@@ -12,9 +12,11 @@ public class Assistant {
         this.assignedDisplays = assignedDisplays;
         this.assistantName = assistantName;
     }
+
     public void assignDisplay(Display display) {
         assignedDisplays.add(display);
     }
+
     public void assist() {
         for (int i = 0; i < assignedDisplays.size(); i++) {
             Display currentDisplay = assignedDisplays.get(i);
@@ -28,6 +30,7 @@ public class Assistant {
             }
         }
     }
+
     public Display buyDisplay(Display display) {
         for (int i = 0; i < assignedDisplays.size(); i++) {
             if (assignedDisplays.get(i).equals(display)) {
@@ -37,9 +40,10 @@ public class Assistant {
         }
         return display;
     }
+
     public List<Display> getAssignedDisplays() {
         return assignedDisplays;
     }
-    }
+}
 
 

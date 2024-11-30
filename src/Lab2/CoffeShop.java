@@ -1,5 +1,8 @@
 package Lab2;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CoffeShop {
@@ -12,7 +15,7 @@ public class CoffeShop {
             // Display main menu options
             System.out.println("\nWelcome to the Coffee Shop! Please select an option:");
             System.out.println("1 - Coffee Recipes");
-            System.out.println("2 - Brew a Coffee");
+            System.out.println("2 - Order a Coffee");
             System.out.println("3 - Leave");
 
             // Get the user's choice
@@ -27,7 +30,7 @@ public class CoffeShop {
 
                 case 2:
                     // Brew a selected coffee
-                    brewCoffee(scanner);
+                    orderCoffee(scanner);
                     break;
 
                 case 3:
@@ -71,31 +74,59 @@ public class CoffeShop {
         scanner.nextLine();
 
         // Create a Barista with the selected coffee type command
-        Barista barista = new Barista(coffeeType);
+        Barista barista = new Barista();
 
         // Brew the selected coffee type
-        barista.showMenu();
+        barista.showMenu(coffeeType);
     }
 
     // Method to brew coffee
-    private void brewCoffee(Scanner scanner) {
-        System.out.println("\nPlease select a coffee type to brew:");
-        System.out.println("1 - Basic Coffee");
-        System.out.println("2 - Americano");
-        System.out.println("3 - Cappuccino");
-        System.out.println("4 - Pumpkin Spice Latte");
-        System.out.println("5 - Syrup Cappuccino");
+    private void orderCoffee(Scanner scanner) {
+        List<Integer> coffeeOrders = new ArrayList<>();
+        boolean ordering = true;
 
-        // Get the coffee type from the user
-        int coffeeType = scanner.nextInt();
-        scanner.nextLine();
+        while (ordering) {
+            System.out.println("\nPlease select a coffee type to order:");
+            System.out.println("1 - Basic Coffee");
+            System.out.println("2 - Americano");
+            System.out.println("3 - Cappuccino");
+            System.out.println("4 - Pumpkin Spice Latte");
+            System.out.println("5 - Syrup Cappuccino");
 
-        // Create a Barista with the selected coffee type command
-        Barista barista = new Barista(coffeeType);
+            // Get the coffee type from the user as an integer
+            int coffeeType = scanner.nextInt();
+            scanner.nextLine();
 
-        // Brew the selected coffee type
-        barista.brewCoffee(scanner);
+            // Validate the coffee type and add to the list if valid
+            if (coffeeType >= 1 && coffeeType <= 5) {
+                coffeeOrders.add(coffeeType);
+            } else {
+                System.out.println("Invalid option. Please select a valid coffee type.");
+                continue;
+            }
+
+            // Ask if the user wants to add another coffee
+            System.out.println("\nWould you like to order another coffee?");
+            System.out.println("1 - Yes");
+            System.out.println("2 - No, I'm done ordering");
+
+            int addMoreChoice = scanner.nextInt();
+            scanner.nextLine();
+
+            if (addMoreChoice == 2) {
+                ordering = false;
+            }
+        }
+
+        // Create a Barista instance
+        Barista barista = new Barista();
+
+        for (int coffeeType : coffeeOrders) {
+            barista.brewCoffee(scanner, coffeeType);
+        }
+        coffeeOrders.clear();
     }
+
 
     public static void main(String[] args) {
         CoffeShop coffeeShop = new CoffeShop();

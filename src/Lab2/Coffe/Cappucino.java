@@ -21,7 +21,7 @@ public class Cappucino extends Coffe {
     }
 
 
-    public Cappucino makeCappuccino() {
+    public final Cappucino makeCappuccino() {
         System.out.println("Making Cappucino");
         printCoffeProccess();
         return this;

@@ -3,15 +3,12 @@ package Lab2;
 import java.util.Scanner;
 import Lab2.Coffe.*;
 public class Barista {
-    private int command;
 
+public Barista() {
 
-    public Barista(int i) {
-        this.command = i;
-    }
+}
 
-
-    public void brewCoffee(Scanner scanner) {
+    public void brewCoffee(Scanner scanner, int command) {
         Coffe.Intensity intensity = getCoffeeIntensity(scanner);
 
         switch (command) {
@@ -61,7 +58,7 @@ public class Barista {
         }
     }
 
-    public void showMenu() {
+    public void showMenu(int command) {
 
 
         switch (command) {
