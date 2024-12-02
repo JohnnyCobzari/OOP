@@ -1,22 +1,23 @@
-package Lab3;
+package Lab3Cars;
 
-import java.util.ArrayList;
+import java.util.Vector;
 
-public class ArrayQueue<T> implements Queue<T> {
-    private final ArrayList<T> items;
+public class VectorQueue<T> implements Queue<T> {
+    private final Vector<T> vector;
     private final int capacity;
 
-    public ArrayQueue(int capacity) {
+    public VectorQueue(int capacity) {
         this.capacity = capacity;
-        this.items = new ArrayList<>();
+        this.vector = new Vector<>();
     }
 
     @Override
     public void enqueue(T item) {
-        if (isFull()) {
+        if (!isFull()){
+            vector.add(item);
+        } else {
             throw new IllegalStateException("Queue is full");
         }
-        items.add(item);
     }
 
     @Override
@@ -24,34 +25,33 @@ public class ArrayQueue<T> implements Queue<T> {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty");
         }
-        return items.removeFirst();
+        return vector.removeFirst();
     }
 
     @Override
     public T peek() {
-        if (isEmpty()) {
+        if (isEmpty()){
             throw new IllegalStateException("Queue is empty");
         }
-        return items.getFirst();
+        return vector.firstElement();
     }
 
     @Override
     public boolean isEmpty() {
-        return items.isEmpty();
+        return vector.isEmpty();
     }
 
-    @Override
     public boolean isFull() {
-        return items.size() >= capacity;
+        return vector.size() >= capacity;
     }
 
     @Override
     public int size() {
-        return items.size();
+        return vector.size();
     }
 
     @Override
     public void clear() {
-        items.clear();
+        vector.clear();
     }
 }
