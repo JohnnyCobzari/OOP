@@ -67,11 +67,11 @@ public class Scheduler {
                 try {
                     Car car = objectMapper.readValue(file, Car.class);
                     semaphore.routeCar(car);
-//                    System.out.println("Processed car ID: " + car.getId());
+
                     Files.delete(Paths.get(file.getPath()));
 
                     if (car.getId() == 30) {
-//                        System.out.println("30 cars processed. Completing remaining tasks...");
+
                         shutdown();
                         return;
                     }
@@ -89,14 +89,14 @@ public class Scheduler {
 
     public void serving(int intervalSeconds) {
         servingExecutor.scheduleAtFixedRate(() -> {
-            System.out.println("\n🚗 Serving cars 🚗");
+            System.out.println("\nServing cars");
             semaphore.serveAllCars();
         }, 0, intervalSeconds, TimeUnit.SECONDS);
     }
 
     public void shutdown() {
         try {
-//            System.out.println("Shutting down scheduler...");
+
             pollingExecutor.shutdown();
             servingExecutor.shutdown();
 
@@ -107,7 +107,6 @@ public class Scheduler {
                 servingExecutor.shutdownNow();
             }
 
-//            System.out.println("Serving all remaining cars...");
             gasPeopleStation.serveCars();
             gasRobotStation.serveCars();
             electricPeopleStation.serveCars();
@@ -115,7 +114,6 @@ public class Scheduler {
 
             printStats();
 
-//            System.out.println("Scheduler shut down successfully.");
         } catch (InterruptedException e) {
             System.err.println("Error during shutdown. Forcing termination...");
             pollingExecutor.shutdownNow();
@@ -134,8 +132,8 @@ public class Scheduler {
                 stats.get("ROBOTS Total"),
                 stats.get("DINING cars"),
                 stats.get("NON-DINING cars"),
-                ElectricStation.getElectricConsumption(),
-                GasStation.getGasConsumption()
+                stats.get("ELECTRIC_C"),
+                stats.get("GAS_C")
         );
 
         System.out.println();

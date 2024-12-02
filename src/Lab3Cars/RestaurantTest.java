@@ -30,11 +30,6 @@ public class RestaurantTest {
         gasStation2 = new GasStation();
         electricStation = new ElectricStation();
 
-        // Reset counters
-        PeopleDinner.resetPeopleServed();
-        RobotDinner.resetRobotsServed();
-        GasStation.resetGasCarsServed();
-        ElectricStation.resetElectricCarsServed();
     }
 
     @Test

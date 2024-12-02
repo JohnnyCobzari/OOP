@@ -79,6 +79,8 @@ public class Semaphore {
         resultStats.put("ROBOTS Total", passengerTypeCount.getOrDefault("ROBOTS", 0));
         resultStats.put("DINING cars", diningCount);
         resultStats.put("NON-DINING cars", nonDiningCount);
+        resultStats.put("ELECTRIC_C",ElectricStation.getElectricConsumption());
+        resultStats.put("GAS_C",GasStation.getGasConsumption());
         return resultStats;
     }
 }
